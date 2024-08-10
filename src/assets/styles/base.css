@@ -1,0 +1,11 @@
+
+@layer components {
+  .tituloh1 {
+    @apply text-2xl text-yellow-400;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
