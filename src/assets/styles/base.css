@@ -1,4 +1,3 @@
-
 @layer components {
   .tituloh1 {
     @apply text-2xl text-yellow-400;
