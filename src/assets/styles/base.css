@@ -1,6 +1,6 @@
 @layer components {
-  .tituloh1 {
-    @apply text-2xl text-yellow-400;
+  .button-start {
+    @apply inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-50 ring-zinc-500 transition duration-300 focus-visible:ring outline-none border border-transparent bg-orange-400 hover:bg-orange-500 active:bg-orange-500 dark:focus:outline-none disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:ring-zinc-200;
   }
 }
 
@@ -8,3 +8,8 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
+
+/* *{
+  color: lightseagreen;
+  color: springgreen;
+} */
