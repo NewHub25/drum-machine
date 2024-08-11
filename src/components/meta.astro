@@ -1,8 +1,8 @@
 ---
 import { getImage } from "astro:assets";
 import { OG, SEO, SITE } from "@data/constants";
-import faviconSvgSrc from "@images/icon.svg";
-import faviconSrc from "@images/icon.jpg";
+import faviconSvgSrc from "@icons/icon.svg";
+import faviconSrc from "@icons/icon.svg";
 
 const defaultProps = {
   meta: SITE.description,
@@ -34,7 +34,7 @@ const appleTouchIcon = await getImage({
   src: faviconSrc,
   width: 180,
   height: 180,
-  format: "png",
+  format: "svg",
 });
 ---
 
@@ -42,6 +42,7 @@ const appleTouchIcon = await getImage({
      https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data -->{
   structuredData && (
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(structuredData)}
     />

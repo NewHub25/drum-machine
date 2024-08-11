@@ -23,10 +23,12 @@ We set the language of the page to English and add classes for scrollbar and scr
     <!-- Define the title of the page -->
     <title>{title}</title>
     <script is:inline>
+      import { globalObject } from "@utils/theme";
+
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
-        localStorage.getItem("hs_theme") === "dark" ||
-        (!("hs_theme" in localStorage) &&
+        localStorage.getItem(globalObject.DRUM_THEME) === "dark" ||
+        (!(globalObject.DRUM_THEME in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
         document.documentElement.classList.add("dark");
@@ -54,13 +56,16 @@ We set the language of the page to English and add classes for scrollbar and scr
     <!-- <FooterSection /> -->
     <style>
       /* CSS rules for the page scrollbar */
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* Para Chrome, Safari y otros basados en WebKit */
       }
-
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+      * {
+        scrollbar-width: none; /* Firefox */
+      }
+      /* Ocultar el 'thumb' de la barra de desplazamiento */
+      ::-webkit-scrollbar-thumb {
+        background: transparent; /* Para Chrome, Safari y otros basados en WebKit */
       }
     </style>
   </body>
