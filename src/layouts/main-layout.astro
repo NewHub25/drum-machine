@@ -1,7 +1,7 @@
 ---
 import Meta from "@components/meta.astro";
 import { SITE } from "@data/constants";
-import "@styles/base.css";
+import '@styles/base.css';
 
 interface Props {
   title?: string;
@@ -10,6 +10,7 @@ interface Props {
   lang?: string;
 }
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
+console.log(Astro.currentLocale);
 ---
 
 <!--

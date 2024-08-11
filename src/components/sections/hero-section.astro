@@ -5,13 +5,7 @@ import PrimaryCTA from "@components/ui/buttons/primary-cta.astro";
 import AvatarsComponent from "@components/ui/avatars-component.astro";
 import heroImage from "@images/hero-drum.jpg";
 
-const {
-  title,
-  subTitle,
-  textBtn,
-  avatars,
-  src,
-} = Astro.props;
+const { title, subTitle, textBtn, avatars, src } = Astro.props;
 
 interface Props {
   title: string;
@@ -52,14 +46,14 @@ interface Props {
   <!-- Hero Image Section -->
   <div class="flex w-full">
     <div class="top-12 overflow-hidden">
-          <Image
-            src={heroImage}
-            alt="Temporal Image"
-            class="h-full w-full scale-110 object-cover object-center"
-            draggable={"false"}
-            loading={"eager"}
-            format={"avif"}
-          />
+      <Image
+        src={heroImage}
+        alt="Temporal Image"
+        class="h-full w-full scale-110 object-cover object-center"
+        draggable={"false"}
+        loading={"eager"}
+        format={"avif"}
+      />
     </div>
   </div>
 </section>

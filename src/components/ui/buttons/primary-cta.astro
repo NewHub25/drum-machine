@@ -7,7 +7,10 @@ interface Props {
 const { text } = Astro.props;
 ---
 
-<button type="button" class="group inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-50 ring-zinc-500 transition duration-300 focus-visible:ring outline-none border border-transparent   bg-orange-400 hover:bg-orange-500 active:bg-orange-500 dark:focus:outline-none disabled:pointer-events-none disabled:opacity-50 2xl:text-base dark:ring-zinc-200">
+<button
+  type="button"
+  class="group inline-flex items-center justify-center gap-x-2 rounded-lg border border-transparent bg-orange-400 px-4 py-3 text-sm font-bold text-neutral-50 outline-none ring-zinc-500 transition duration-300 hover:bg-orange-500 focus-visible:ring active:bg-orange-500 disabled:pointer-events-none disabled:opacity-50 dark:ring-zinc-200 dark:focus:outline-none 2xl:text-base"
+>
   {text}
   <IconArrowRight name="arrowRight" />
 </button>
