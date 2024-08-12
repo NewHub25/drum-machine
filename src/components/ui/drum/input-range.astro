@@ -1,8 +1,16 @@
-<div>
+---
+import { Image } from "astro:assets";
+import SoundHigh from "@icons/sound-high-solid.svg";
+---
+
+<div class="my-2 w-[160px]">
   <span
-    id="rangeValue"
     class="inline-block w-full text-center text-xl text-[#333] dark:text-[#eee]"
-    >0</span
+    ><span id="rangeValue">50</span>&nbsp;<Image
+      class="inline w-8"
+      src={SoundHigh}
+      alt="soun high"
+    /></span
   >
   <input
     class="range h-4 w-full overflow-hidden rounded-lg bg-[#222] outline-none dark:bg-[#eee]"
