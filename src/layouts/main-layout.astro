@@ -23,17 +23,8 @@ We set the language of the page to English and add classes for scrollbar and scr
     <Meta {meta} {structuredData} />
     <!-- Define the title of the page -->
     <title>{title}</title>
-    <script>
+    <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
-      if (
-        localStorage.getItem("DRUM_THEME") === "dark" ||
-        (!("DRUM_THEME" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
       const temp_theme = localStorage.getItem("DRUM_THEME");
       if (
         !temp_theme &&
@@ -47,7 +38,7 @@ We set the language of the page to English and add classes for scrollbar and scr
       }
     </script>
     <script>
-      // import "@scripts/lenisSmoothScroll.js";
+      import "@scripts/lenis-smooth-scroll.js";
     </script>
   </head>
   <body

@@ -8,3 +8,7 @@
     @apply -m-4 inline;
   }
 }
+
+main {
+  min-height: 2000px;
+}

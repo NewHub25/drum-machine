@@ -48,22 +48,30 @@
 </button>
 
 <!-- Theme Appearance script to manage light/dark modes -->
-<script>
+<script is:inline>
+  // Constants
   const btnToggleTheme = document.querySelector(
     'button[aria-label="Dark Theme Toggle"]',
   );
-  btnToggleTheme.addEventListener("click", () => {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("DRUM_THEME", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("DRUM_THEME", "dark");
-    }
-  });
+  const changeThemeByHTMLElement = () => {
+    const isDark = document.documentElement.classList.contains("dark");
+    document.documentElement.classList[!isDark ? "add" : "remove"]?.("dark");
+    localStorage.setItem("DRUM_THEME", isDark ? "light" : "dark");
+  };
+
+  btnToggleTheme.addEventListener("click", changeThemeByHTMLElement);
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (e) => {
-      console.log(e.target);
+      const mediaQueryList = e.target;
+      const theme = localStorage.getItem("DRUM_THEME");
+      // It will change by the user preference because there is a store of theme
+      if (
+        (!mediaQueryList.matches && theme === "dark") ||
+        (mediaQueryList.matches && theme === "light")
+      ) {
+        const userWantChange = confirm("Do you like to change the theme?");
+        if (userWantChange) changeThemeByHTMLElement();
+      }
     });
 </script>
