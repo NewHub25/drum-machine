@@ -1,31 +1,54 @@
 ---
 import { Image } from "astro:assets";
 import SoundHigh from "@icons/sound-high-solid.svg";
+import SoundLow from "@icons/sound-low-solid.svg";
+import SoundMin from "@icons/sound-min-solid.svg";
+import SoundOff from "@icons/sound-off-solid.svg";
 ---
 
-<div class="my-2 w-[160px]">
+<div class="my-2 w-[150px]">
   <span
-    class="inline-block w-full text-center text-xl text-[#333] dark:text-[#eee]"
-    ><span id="rangeValue">50</span>&nbsp;<Image
-      class="inline w-8"
-      src={SoundHigh}
-      alt="soun high"
-    /></span
+    class="low inline-block w-full text-center text-xl text-[#333] dark:text-[#eee]"
   >
+    <span id="rangeValue" class="rangeValue sr-only">50</span>&nbsp;
+    <Image class="high-sound inline w-8" src={SoundHigh} alt="sound high" />
+    <Image class="low-sound inline w-8" src={SoundLow} alt="sound low" />
+    <Image class="min-sound inline w-8" src={SoundMin} alt="sound min" />
+    <Image class="off-sound inline w-8" src={SoundOff} alt="sound off" />
+  </span>
   <input
+    id="rangeInput"
     class="range h-4 w-full overflow-hidden rounded-lg bg-[#222] outline-none dark:bg-[#eee]"
     type="range"
     value="50"
     min="0"
     max="100"
-    onchange="rangeSlide(this.value)"
-    onmousemove="rangeSlide(this.value)"
   />
 </div>
 <script is:inline>
-  function rangeSlide(value) {
-    document.getElementById("rangeValue").innerHTML = value;
-  }
+  // Remeber the output from the inputs is STRING
+  const modifySoundByRange = (element, _value) => {
+    _value = Number(_value);
+    const classes = ["off", "min", "low", "high"];
+    classes.forEach((cls) => element.classList.remove(cls));
+    if (_value === 0) {
+      element.classList.add("off");
+    } else if (_value < 30) {
+      element.classList.add("min");
+    } else if (_value < 80) {
+      element.classList.add("low");
+    } else {
+      element.classList.add("high");
+    }
+  };
+  const rangeSlide = (value) => {
+    const spanElement = document.getElementById("rangeValue");
+    modifySoundByRange(spanElement.parentElement, value);
+    spanElement.innerHTML = value;
+  };
+  const rangeInput = document.getElementById("rangeInput");
+  rangeInput.addEventListener("change", (e) => rangeSlide(e.target.value));
+  rangeInput.addEventListener("mousemove", (e) => rangeSlide(e.target.value));
 </script>
 <style>
   .range {
@@ -41,5 +64,20 @@ import SoundHigh from "@icons/sound-high-solid.svg";
     cursor: pointer;
     border: 4px solid #333;
     box-shadow: -407px 0 0 400px #1fb2aa;
+  }
+  .rangeValue ~ img {
+    display: none;
+  }
+  .high > .high-sound {
+    display: inline;
+  }
+  .low > .low-sound {
+    display: inline;
+  }
+  .min > .min-sound {
+    display: inline;
+  }
+  .off > .off-sound {
+    display: inline;
   }
 </style>

@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
       containerHero.style.top = scrollY / 2 + "px";
     }
     const result = (innerHeight * Math.pow(0.59, scrollY / 100)) / 10;
-    containerHero.style.filter = `blur(${result - 2}px)`;
-    if (scrollY > innerHeight - 320) {
+    containerHero.style.filter = `blur(${result - 3}px)`;
+    if (scrollY > innerHeight - 250) {
       containerHero.classList.add("larger");
     } else {
       containerHero.classList.remove("larger");
