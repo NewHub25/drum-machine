@@ -24,4 +24,5 @@ pnpm-debug.log*
 .idea/
 
 # custom directory
-/todo/
+/advice/
+/stuff/

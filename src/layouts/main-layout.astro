@@ -1,5 +1,6 @@
 ---
 import Meta from "@components/meta.astro";
+import ToggleTheme from "@components/ui/toggle-theme.astro";
 import { SITE } from "@data/constants";
 import "@styles/base.css";
 
@@ -23,12 +24,10 @@ We set the language of the page to English and add classes for scrollbar and scr
     <!-- Define the title of the page -->
     <title>{title}</title>
     <script is:inline>
-      import { globalObject } from "@utils/theme";
-
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
-        localStorage.getItem(globalObject.DRUM_THEME) === "dark" ||
-        (!(globalObject.DRUM_THEME in localStorage) &&
+        localStorage.getItem("DRUM_THEME") === "dark" ||
+        (!("DRUM_THEME" in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
         document.documentElement.classList.add("dark");
@@ -48,7 +47,7 @@ We set the language of the page to English and add classes for scrollbar and scr
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
     -->
     <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
-      <!-- <Navbar /> -->
+      <ToggleTheme />
       <main>
         <slot />
       </main>

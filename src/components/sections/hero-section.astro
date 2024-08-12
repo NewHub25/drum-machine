@@ -4,6 +4,8 @@ import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/primary-cta.astro";
 import AvatarsComponent from "@components/ui/avatars-component.astro";
 import heroImage from "@images/hero-drum.jpg";
+import Brandlogo from "@components/ui/brandlogo.astro";
+import ImgSvg from "@icons/icon.svg";
 
 const { title, subTitle, textBtn, avatars, src } = Astro.props;
 
@@ -27,6 +29,8 @@ interface Props {
       class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl lg:text-6xl lg:leading-tight"
     >
       <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
+      <Brandlogo />
+      <!-- <Image src={ImgSvg} alt='img svg' class='svg_svg' /> -->
       <Fragment set:html={title} />
     </h1>
     {
@@ -45,7 +49,7 @@ interface Props {
   </div>
   <!-- Hero Image Section -->
   <div class="flex w-full">
-    <div class="top-12 overflow-hidden">
+    <div class="top-12 overflow-hidden blur">
       <Image
         src={heroImage}
         alt="Temporal Image"

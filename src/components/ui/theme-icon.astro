@@ -46,3 +46,24 @@
     ></path></svg
   >
 </button>
+
+<!-- Theme Appearance script to manage light/dark modes -->
+<script>
+  const btnToggleTheme = document.querySelector(
+    'button[aria-label="Dark Theme Toggle"]',
+  );
+  btnToggleTheme.addEventListener("click", () => {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.removeItem("DRUM_THEME");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("DRUM_THEME", "dark");
+    }
+  });
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      console.log(e.target);
+    });
+</script>
