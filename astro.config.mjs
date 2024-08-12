@@ -4,6 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://github.com/newHub25/",
+  site: "https://github.com/NewHub25/drum-machine",
   integrations: [tailwind()],
 });
