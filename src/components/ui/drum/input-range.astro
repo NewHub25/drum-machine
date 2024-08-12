@@ -1,0 +1,37 @@
+<div>
+  <span
+    id="rangeValue"
+    class="inline-block w-full text-center text-xl text-[#333] dark:text-[#eee]"
+    >0</span
+  >
+  <input
+    class="range h-4 w-full overflow-hidden rounded-lg bg-[#222] outline-none dark:bg-[#eee]"
+    type="range"
+    value="50"
+    min="0"
+    max="100"
+    onchange="rangeSlide(this.value)"
+    onmousemove="rangeSlide(this.value)"
+  />
+</div>
+<script is:inline>
+  function rangeSlide(value) {
+    document.getElementById("rangeValue").innerHTML = value;
+  }
+</script>
+<style>
+  .range {
+    -webkit-appearance: none;
+    box-shadow: inset 0 0 5px #222;
+  }
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #1fb2aa;
+    cursor: pointer;
+    border: 4px solid #333;
+    box-shadow: -407px 0 0 400px #1fb2aa;
+  }
+</style>

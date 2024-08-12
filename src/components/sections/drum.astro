@@ -1,0 +1,195 @@
+---
+import { Image } from "astro:assets";
+import Checkbox from "@components/ui/drum/checkbox.astro";
+import Display from "@components/ui/drum/display.astro";
+import InputRange from "@components/ui/drum/input-range.astro";
+import FCC from "@icons/fcc.svg";
+---
+
+<article class="containerHero w-full">
+  <section
+    class="top-12 flex flex-col-reverse text-lg text-neutral-800 dark:text-neutral-200 sm:flex-row"
+    id="drum-machine"
+  >
+    <div class="w-60">
+      <h2 class="mb-4 w-[90%] border-b-2 text-center text-2xl font-bold">
+        FCC&nbsp;<Image
+          src={FCC}
+          alt="Free Codecamp logo"
+          class="inline w-10"
+        />
+      </h2>
+      <div>
+        <p class="-mb-2 text-center">Power</p>
+        <div class="flex justify-center">
+          <Checkbox />
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <Display />
+      </div>
+      <InputRange />
+      <div>
+        <p class="-mb-2 text-center">Bank</p>
+        <div class="flex justify-center">
+          <Checkbox />
+        </div>
+      </div>
+    </div>
+    <aside class="pad-bank mb-8 grid aspect-square grid-cols-3">
+      <button
+        role="button"
+        class="drum-pad"
+        id="Heater-1"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="Q"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+        ></audio><span>Q</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Heater-2"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="W"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+        ></audio><span>W</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Heater-3"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="E"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+        ></audio><span>E</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Heater-4"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="A"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+        ></audio><span>A</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Clap"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="S"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+        ></audio><span>S</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Open-HH"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="D"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+        ></audio><span>D</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Kick-n'-Hat"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="Z"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+        ></audio><span>Z</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Kick"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="X"
+          src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+        ></audio><span>X</span>
+      </button><button
+        role="button"
+        class="drum-pad"
+        id="Closed-HH"
+        style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+      >
+        <audio
+          class="clip"
+          id="C"
+          src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+        ></audio><span>C</span>
+      </button>
+    </aside>
+  </section>
+</article>
+<style>
+  .pad-bank {
+    width: 400px;
+  }
+  .drum-pad {
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 1em;
+    width: 90%;
+    aspect-ratio: 1;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .drum-pad:hover {
+    outline: 0;
+  }
+  .drum-pad:active {
+    outline: 0;
+    translate: 1px 3px;
+  }
+  .drum-pad span {
+    background-color: rgb(5, 6, 45);
+    padding: 1rem;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .drum-pad:hover span {
+    background: none;
+  }
+  @media (width<= 640px) {
+    .pad-bank {
+      width: 300px;
+    }
+  }
+</style>

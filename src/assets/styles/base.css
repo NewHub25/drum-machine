@@ -2,19 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-
 @layer components {
   .brandlogo {
     @apply -m-4 inline;
   }
 }
-
 main {
   min-height: 200vh;
   min-height: 200dvh;
 }
 .containerHero {
   position: relative;
-  transition: top 50ms ease;
+  transition:
+    top 50ms ease,
+    left 500ms ease;
   filter: blur(74px);
+}
+.containerHero.larger {
+  left: calc(500px - (50vw + 250px));
 }

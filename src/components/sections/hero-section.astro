@@ -1,10 +1,10 @@
 ---
 // Import the necessary dependencies
 import { Image } from "astro:assets";
-import PrimaryCTA from "@components/ui/buttons/primary-cta.astro";
+import PrimaryCTA from "@components/ui/primary-cta.astro";
 import AvatarsComponent from "@components/ui/avatars-component.astro";
-import heroImage from "@images/reneterp_drum_medium.jpg";
 import Brandlogo from "@components/ui/brandlogo.astro";
+import Drum from "./drum.astro";
 
 const { title, subTitle, textBtn, avatars, src } = Astro.props;
 
@@ -47,16 +47,5 @@ interface Props {
     <AvatarsComponent avatars={avatars} />
   </div>
   <!-- Hero Image Section -->
-  <div class="containerHero w-full">
-    <div class="top-12 overflow-hidden">
-      <Image
-        src={heroImage}
-        alt="Temporal Image"
-        class="h-full w-full scale-110 object-cover object-center"
-        draggable={"false"}
-        loading={"eager"}
-        format={"jpg"}
-      />
-    </div>
-  </div>
+  <Drum />
 </section>
