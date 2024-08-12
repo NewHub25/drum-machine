@@ -2,12 +2,12 @@
 <button
   type="button"
   aria-label="Dark Theme Toggle"
-  class="hs-dark-mode hs-dark-mode-active:hidden group flex h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-orange-400 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-orange-300 dark:focus:outline-none"
+  class="flex h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:bg-neutral-200 hover:text-orange-400 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-orange-300 dark:focus:outline-none"
   data-hs-theme-click-value="dark"
 >
   <!-- The SVG displayed shows an abstract icon that represents the moon (dark theme) -->
   <svg
-    class="h-4 w-4 flex-shrink-0"
+    class="inline-block h-4 w-4 flex-shrink-0 dark:hidden"
     width="24"
     height="24"
     viewBox="0 0 24 24"
@@ -18,18 +18,9 @@
     stroke-linejoin="round"
     ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
   >
-  <!-- Light Theme Toggle Button -->
   <!-- This button is hidden by default and only appears when the dark theme is active, when clicked, it switches to the light theme -->
-</button>
-<button
-  type="button"
-  aria-label="Light Theme Toggle"
-  class="hs-dark-mode hs-dark-mode-active:flex group hidden h-8 w-8 items-center justify-center rounded-full font-medium text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:text-orange-400 dark:text-neutral-400 dark:ring-zinc-200 dark:hover:bg-neutral-700 dark:hover:text-orange-300 dark:focus:outline-none"
-  data-hs-theme-click-value="light"
->
-  <!-- The SVG displayed shows a standard sun icon that stands for the light theme -->
   <svg
-    class="h-4 w-4 flex-shrink-0"
+    class="hidden h-4 w-4 flex-shrink-0 dark:inline-block"
     width="24"
     height="24"
     viewBox="0 0 24 24"
@@ -46,8 +37,7 @@
     ></path></svg
   >
 </button>
-
-<!-- Theme Appearance script to manage light/dark modes -->
+<!-- The script to manage light/dark modes -->
 <script is:inline>
   // Constants
   const btnToggleTheme = document.querySelector(
