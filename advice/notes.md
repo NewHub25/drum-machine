@@ -12,3 +12,5 @@ prettier --write .
 ```
 
 - Si estás usandpo linter y has hecho todo lo posible, quizá sea el caché del linter, reinicia tu área de trabajo
+
+- Ver despues en el deploy si algo falla, sino ver los tags SCRIPT, eso del inline si que me confunde

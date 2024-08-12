@@ -55,7 +55,7 @@
   btnToggleTheme.addEventListener("click", () => {
     if (document.documentElement.classList.contains("dark")) {
       document.documentElement.classList.remove("dark");
-      localStorage.removeItem("DRUM_THEME");
+      localStorage.setItem("DRUM_THEME", "light");
     } else {
       document.documentElement.classList.add("dark");
       localStorage.setItem("DRUM_THEME", "dark");
