@@ -10,7 +10,11 @@
 }
 
 main {
-  min-height: 2000px;
+  min-height: 200vh;
+  min-height: 200dvh;
 }
 .containerHero {
+  position: relative;
+  transition: top 50ms ease;
+  filter: blur(74px);
 }
