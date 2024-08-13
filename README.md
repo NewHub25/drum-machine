@@ -1,9 +1,10 @@
-## Overview
+# Overview
 
 Drum-machine is an engaging landing page designed to invite users to experience the thrill of creating music with just a click. With an intuitive interface and realistic drum sounds, this app lets you explore your musical creativity easily and fun.
 
-# Project Structure
+## Project Structure
 
+```md
 drum-machine/
 ├── public/ # Static files served directly
 ├── src/ # Source code of the application
@@ -23,8 +24,9 @@ drum-machine/
 │ ├── pages/ # Individual pages of the application
 │ ├── sounds/ # Drum sound files
 └── utils/ # Helper functions and utilities
+```
 
-# Key features:
+## Key features:
 
 Intuitive interface: Create beats with just a click of the drum pads.
 Realistic sounds: Enjoy a wide variety of high-quality drum sounds.
@@ -53,4 +55,4 @@ git clone https://github.com/your-username/drum-machine.git
   npm run dev
 ```
 
-# Enjoy creating music with drum-machine!
+## Enjoy creating music with drum-machine!
