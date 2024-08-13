@@ -37,6 +37,8 @@ This is my project on deploy [links](https://www.freecodecamp.org)
 
 <img src="./src/images/reneterp_drum_medium.jpg" />
 
+## Run the project yourself
+
 1. Clone the repository:
 
 ```
@@ -55,4 +57,10 @@ git clone https://github.com/your-username/drum-machine.git
   npm run dev
 ```
 
-## Enjoy creating music with drum-machine!
+## Deploying to Vercel
+
+Click the button below to start deploying your project on Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/)
+
+## Enjoy creating music with drum-machine! 🎵🎶
