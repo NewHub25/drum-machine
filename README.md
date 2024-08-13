@@ -1,47 +1,56 @@
-# Astro Starter Kit: Minimal
+## Overview
 
-```sh
-npm create astro@latest -- --template minimal
+Drum-machine is an engaging landing page designed to invite users to experience the thrill of creating music with just a click. With an intuitive interface and realistic drum sounds, this app lets you explore your musical creativity easily and fun.
+
+# Project Structure
+
+drum-machine/
+├── public/ # Static files served directly
+├── src/ # Source code of the application
+│ ├── assets/ # Static assets (images, fonts, etc.)
+│ │ ├── scripts/
+│ │ └── styles/
+│ ├── components/ # Reusable UI components
+│ │ ├── sections/ # Page sections (header, footer, etc.)
+│ │ │ └── misc/
+│ │ ├── ui/ # UI components
+│ │ │ ├── drum/ # Drum pad components
+│ │ │ ├── icons/
+│ │ └── ...
+│ ├── data_files/ # Static data (e.g., configuration)
+│ ├── images/ # Images used in the application
+│ ├── layouts/ # Page layouts
+│ ├── pages/ # Individual pages of the application
+│ ├── sounds/ # Drum sound files
+└── utils/ # Helper functions and utilities
+
+# Key features:
+
+Intuitive interface: Create beats with just a click of the drum pads.
+Realistic sounds: Enjoy a wide variety of high-quality drum sounds.
+Customization: Adapt the experience to your taste with different drum kits and configuration options.
+Don't wait any longer! Visit our website and start making music today.
+
+This is my project on deploy [links](https://www.freecodecamp.org)
+
+<img src="./src/images/reneterp_drum_medium.jpg" />
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/drum-machine.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+2. Install dependencies:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+  npm run install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Start the development server:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```
+  npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Enjoy creating music with drum-machine!
